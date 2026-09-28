@@ -1,0 +1,16 @@
+{
+  "name": "sudip-acharya-studio",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/ui": "2.8.10",
+    "sanity": "3.57.4"
+  },
+  "devDependencies": {
+    "typescript": "5.6.2"
+  }
+}
