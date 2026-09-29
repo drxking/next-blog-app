@@ -71,5 +71,31 @@ export const blockContentType = defineType({
       ],
       preview: {select: {title: 'alt', subtitle: 'url'}},
     }),
+    defineArrayMember({
+      name: 'codeBlock',
+      title: 'Code block',
+      type: 'object',
+      fields: [
+        {
+          name: 'code',
+          title: 'Code',
+          type: 'text',
+          rows: 12,
+          validation: (rule) => rule.required(),
+        },
+        {
+          name: 'label',
+          title: 'Filename or technology',
+          description: 'Shown in the top-left corner, for example: app/page.tsx or TypeScript.',
+          type: 'string',
+        },
+      ],
+      preview: {
+        select: {title: 'label', subtitle: 'code'},
+        prepare({title, subtitle}) {
+          return {title: title || 'Code block', subtitle: subtitle?.slice(0, 80)}
+        },
+      },
+    }),
   ],
 })
